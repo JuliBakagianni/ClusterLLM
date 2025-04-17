@@ -1,5 +1,5 @@
 export OPENAI_API_KEY="OPENAI_API_KEY"
-for dataset in banking77
+for dataset in arxiv-clustering-s2s reddit-clustering biorxiv-clustering-s2s  stackexchange-clustering medrxiv-clustering-s2s
 do
     link_path=sampled_triplet_results/${dataset}_embed=instructor_s=small_m=1024_d=67.0_sf_choice_seed=100.json
     # link_path=sampled_triplet_results/${dataset}_embed=instructor_s=large_m=1024_d=67.0_sf_choice_seed=100.json
