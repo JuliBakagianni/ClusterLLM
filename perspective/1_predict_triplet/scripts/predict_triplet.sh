@@ -6,8 +6,7 @@ do
     OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python predict_triplet.py \
         --dataset $dataset \
         --data_path $link_path \
-        --openai_org "OPENAI_ORG" \
-        --model_name gpt-3.5-turbo-0301 \
+        --model_name gpt-3.5-turbo \
         --temperature 0
 done
 
