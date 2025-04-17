@@ -27,7 +27,7 @@ def prepare_data(prompt, datum):
     return prompt + input_txt + postfix
 
 def post_process(completion, choices):
-    content = completion['choices'][0]['message']['content'].strip()
+    content = completion.choices[0].message.content.strip()
     result = []
     for choice in choices:
         choice_txt = "Choice" + choice
