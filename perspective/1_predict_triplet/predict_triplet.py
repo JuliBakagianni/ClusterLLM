@@ -7,7 +7,6 @@ from tools import delayed_completion, prepare_data, post_process
 
 
 def predict(args):
-    openai.organization = args.openai_org
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
     pred_path = args.data_path.split("/")[-1].replace(".json", f"-{args.model_name}{'-temp' + str(round(args.temperature, 1)) if args.temperature > 0 else ''}-pred.json")
@@ -66,7 +65,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default=None, type=str)
     parser.add_argument("--data_path", default=None, type=str)
-    parser.add_argument("--openai_org", type=str, required=True)
     parser.add_argument("--model_name", type=str, default="gpt-3.5-turbo")
     parser.add_argument("--delay", type=int, default=1)
     parser.add_argument("--max_trials", type=int, default=10)
