@@ -1,6 +1,6 @@
 # ===== instructor-large =====
 scale=small
-for dataset in banking77 few_rel_nat stackexchange go_emotion
+for dataset in arxiv-clustering-s2s reddit-clustering biorxiv-clustering-s2s  stackexchange-clustering medrxiv-clustering-s2s
 do
     for max_query in 1024
     do
@@ -8,7 +8,7 @@ do
         do
             feat_path=../../datasets/${dataset}/${scale}_embeds.hdf5
             python triplet_sampling.py \
-                --data_path ../../datasets/${dataset}/${scale}.jsonl \
+                --data_path ../../datasets/${dataset}.jsonl \
                 --feat_path $feat_path \
                 --dataset $dataset \
                 --embed_method $embed \
