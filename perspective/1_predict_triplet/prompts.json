@@ -1,8 +1,11 @@
 {
     "banking77": "Select the banking customer utterance that better corresponds with the Query in terms of intent.\n\n",
-    "stackexchange": "Select the StackExchange question that better corresponds with the Query in terms of topic.\n\n",
+    "reddit-clustering": "Select the Reddit question that better corresponds with the Query in terms of topic.\n\n",
+    "stackexchange-clustering": "Select the StackExchange question that better corresponds with the Query in terms of topic.\n\n",
     "reddit": "Select the Reddit question that better corresponds with the Query in terms of topic.\n\n",
-    "arxiv_fine": "Select the Arxiv paper title that better corresponds with the Query in terms of domain.\n\n",
+    "arxiv-clustering-s2s": "Select the Arxiv paper title that better corresponds with the Query in terms of domain.\n\n",
+    "medrxiv-clustering-s2s": "Select the Medrxiv paper title that better corresponds with the Query in terms of domain.\n\n",
+    "biorxiv-clustering-s2s": "Select the Biorxiv paper title that better corresponds with the Query in terms of domain.\n\n",
     "synthesized_emotion": "Select the document that better corresponds with the Query in terms of emotion.\n\n",
     "synthesized_style": "Select the document that better corresponds with the Query in terms of style.\n\n",
     "synthesized_topic": "Select the document that better corresponds with the Query in terms of topic.\n\n",
