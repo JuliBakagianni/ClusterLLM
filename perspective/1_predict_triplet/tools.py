@@ -12,7 +12,7 @@ def delayed_completion(delay_in_seconds: float = 1, max_trials: int = 1, **kwarg
     output, error = None, None
     for _ in range(max_trials):
         try:
-            output = openai.ChatCompletion.create(**kwargs)
+            output = openai.chat.completions.create(**kwargs)
             break
         except Exception as e:
             error = e
