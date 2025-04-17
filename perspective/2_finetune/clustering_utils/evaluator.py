@@ -148,9 +148,9 @@ class ClusteringEvaluator(object):
             print('with prompt')
             for s in self.sentences:
                 if len(self.tokenizer(DEFINITIONS[self.args.prompt][self.args.task_name]+s)['input_ids']) <= 256:
-                    new_sentences.append([DEFINITIONS[self.args.prompt][self.args.task_name], s, 0])
+                    new_sentences.append(''.join([DEFINITIONS[self.args.prompt][self.args.task_name], s]))
                 else:
-                    new_sentences.append(['', s, 0])
+                    new_sentences.append(s)
         else:
             new_sentences = self.sentences
         corpus_embeddings = np.asarray(model.encode(new_sentences))
