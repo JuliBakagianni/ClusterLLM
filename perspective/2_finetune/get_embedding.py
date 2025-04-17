@@ -7,6 +7,7 @@ import logging
 import argparse
 import numpy as np
 from InstructorEmbedding import INSTRUCTOR
+from sentence_transformers import SentenceTransformer
 from clustering_utils.evaluator import ClusteringEvaluator
 
 logging.basicConfig(level=logging.INFO)
@@ -49,7 +50,7 @@ if os.path.exists(args.result_file) and not args.overwrite:
 
 else:
 
-    model = INSTRUCTOR(args.model_name,cache_folder=args.cache_dir)
+    model = SentenceTransformer('hkunlp/instructor-large')
     if args.checkpoint is not None:
         print(f"Loading from {args.checkpoint} ...")
         state_dict = torch.load(os.path.join(args.checkpoint, 'pytorch_model.bin'))
