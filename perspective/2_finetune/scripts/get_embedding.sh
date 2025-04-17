@@ -1,16 +1,13 @@
 # ===== original embedding =====
-for dataset in banking77
+for dataset in arxiv-clustering-s2s reddit-clustering biorxiv-clustering-s2s  stackexchange-clustering medrxiv-clustering-s2s
 do
-    for scale in small
-    do
-        CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python get_embedding.py \
-            --model_name hkunlp/instructor-large \
-            --scale $scale \
-            --task_name $dataset \
-            --data_path ../../datasets/${dataset}/${scale}.jsonl \
-            --result_file ../../datasets/${dataset}/${scale}_embeds.hdf5 \
-            --measure
-    done
+    CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python get_embedding.py \
+        --model_name hkunlp/instructor-large \
+        --scale default \
+        --task_name $dataset \
+        --data_path ../../datasets/${dataset}/.jsonl \
+        --result_file ../../datasets/${dataset}_embeds.hdf5 \
+        --measure
 done
 
 # ===== with checkpoint =====
