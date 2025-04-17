@@ -6,7 +6,7 @@ do
     do
         for embed in instructor
         do
-            feat_path=../../datasets/${dataset}/${scale}_embeds.hdf5
+            feat_path=../../datasets/${dataset}_embeds.hdf5
             python triplet_sampling.py \
                 --data_path ../../datasets/${dataset}.jsonl \
                 --feat_path $feat_path \
